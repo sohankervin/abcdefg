@@ -1,0 +1,36 @@
+#! /usr/bin/python
+"""
+sophie hannah 
+18 April 2018
+
+the following program has a statement that's reversed partially.
+i will have a reverse list method to reverse the whole list, then 
+switch values within slices so it reads correctly.
+
+the following is supposed to use a worst case scenario O(n) algorithm.
+"""
+def reverseList(aList) :
+    # reverse the list in place, reverse() method does not return a value
+        # reversed list
+    reversedList = aList.reverse()
+
+    # slice up the list and reverse the slices
+    a = ["".join(aList[ :5][::-1])]
+    b =  ["".join(aList[5:9][::-1])]
+    c =  ["".join(aList[9 : 17][::-1])]
+    
+    newList = a + b + c
+    blah = ''.join(str(i) for i in newList)
+
+    return blah
+    # return joined strings
+   
+
+myList = [ 'e', 'v', 'e', 'r', 'y', 'd', 'a', 'y', 
+    'w', 'e', 'e', 'd', 
+    's', 'm', 'o', 'k', 'e' ]
+
+def main() :
+    reverseList(myList)
+
+main()
